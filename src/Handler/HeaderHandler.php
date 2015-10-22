@@ -20,6 +20,31 @@ class HeaderHandler
 {
 
     /**
+     * The standard notification-type.
+     */
+    const STANDARD = 0;
+
+    /**
+     * The success notification-type.
+     */
+    const SUCCESS = 1;
+
+    /**
+     * The error notification-type.
+     */
+    const ERROR = 2;
+
+    /**
+     * The info notification-type.
+     */
+    const INFO = 3;
+
+    /**
+     * The warning notification-type.
+     */
+    const WARNING = 4;
+
+    /**
      * @var int
      */
     private static $messageindex = 0;
@@ -28,6 +53,43 @@ class HeaderHandler
      * @var string
      */
     private $identifier = 'Notify';
+
+    /**
+     * The notification types.
+     *
+     * @return  array
+     */
+    private static $types = array(
+        'standard' => self::STANDARD,
+        'success'  => self::SUCCESS,
+        'error'    => self::ERROR,
+        'info'     => self::INFO,
+        'warning'  => self::WARNING
+    );
+
+    /**
+     * Maps Notification Alerts to the Header Notification types
+     *
+     * @var array
+     */
+    private $levelMapping = array(
+        NotificationCenter::DEBUG     => self::STANDARD,
+        NotificationCenter::INFO      => self::SUCCESS,
+        NotificationCenter::NOTICE    => self::INFO,
+        NotificationCenter::WARNING   => self::WARNING,
+        NotificationCenter::ERROR     => self::ERROR,
+        NotificationCenter::CRITICAL  => self::ERROR,
+        NotificationCenter::ALERT     => self::ERROR,
+        NotificationCenter::EMERGENCY => self::ERROR
+    );
+
+    /**
+     * @inheritdoc
+     */
+    public static function getTypes()
+    {
+        return self::$types;
+    } // function
 
     /**
      * Handle a notification
@@ -57,7 +119,7 @@ class HeaderHandler
                 json_encode(
                     array(
                         'message' => $notification->message(),
-                        'type'    => $level,
+                        'type'    => isset($this->levelMapping[$level]) ? $this->levelMapping[$level] : self::STANDARD,
                         'options' => $options
                     )
                 )
