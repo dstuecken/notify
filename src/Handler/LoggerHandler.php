@@ -53,9 +53,10 @@ class LoggerHandler
     /**
      * @param string $identifier
      */
-    public function __construct($level = NotificationCenter::INFO)
+    public function __construct(LoggerInterface $logger, $level = NotificationCenter::INFO)
     {
-        $this->level      = $level;
+        $this->logger = $logger;
+        $this->level  = $level;
     }
 
 }
