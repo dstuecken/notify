@@ -1,10 +1,14 @@
 {
-    "name": "dstuecken/notify",
-    "description": "Framework agnostic and lightweight notification system with several adapters.",
+    "name":         "dstuecken/notify",
+    "type":         "library",
+    "description":  "Framework agnostic and lightweight notification system with several adapters.",
+    "keywords":     ["notify", "notification", "flash", "logger", "abstraction"],
+    "minimum-stability": "dev",
     "require-dev": {
         "hipchat/hipchat-php": "1.2.*",
         "psr/log": "~1.0",
-        "swiftmailer/swiftmailer": "~5.0.0"
+        "swiftmailer/swiftmailer": "~5.0.0",
+        "phpunit/phpunit": "3.7.*"
     },
     "require": {
         "php": ">=5.3.0",
