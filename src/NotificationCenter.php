@@ -157,8 +157,8 @@ class NotificationCenter
     public function log($level, $message, array $context = array())
     {
         return $this->notify(
-            $level,
-            new DetailedNotification($message, '', $context)
+            new DetailedNotification($message, '', $context),
+            $level
         );
     }
 

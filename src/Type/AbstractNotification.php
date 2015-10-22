@@ -25,17 +25,6 @@ abstract class AbstractNotification implements
     protected $title = '';
 
     /**
-     * @param        $message
-     * @param string $title
-     * @param array  $attributes
-     */
-    public function __construct($message, $title = '')
-    {
-        $this->message    = $message;
-        $this->title      = $title;
-    }
-
-    /**
      * @inheritDoc
      */
     public function message()
@@ -69,5 +58,15 @@ abstract class AbstractNotification implements
     public function setTitle($title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * @param string $message    The notification message
+     * @param string $title      The notification title
+     */
+    public function __construct($message, $title = '')
+    {
+        $this->message    = $message;
+        $this->title      = $title;
     }
 }

@@ -4,10 +4,11 @@ namespace dstuecken\Notify\Type;
 /**
  * Class DetailedNotification
  *
- * @author Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@i-doit.com>
  * @package dstuecken\Notify\NotificationType
  */
-class DetailedNotification extends AbstractNotification
+class DetailedNotification
+    extends AbstractNotification
 {
     /**
      * Additional notification attributes
@@ -39,6 +40,17 @@ class DetailedNotification extends AbstractNotification
     public function attributes()
     {
         return $this->attributes;
+    }
+
+    /**
+     * @param string $message    The notification message
+     * @param string $title      The notification title
+     * @param array  $attributes Optional attributes
+     */
+    public function __construct($message, $title = '', $attributes = array())
+    {
+        parent::__construct($message, $title);
+        $this->attributes = $attributes;
     }
 
 }
