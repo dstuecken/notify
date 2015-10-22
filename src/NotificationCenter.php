@@ -1,7 +1,7 @@
 <?php
 namespace dstuecken\Notify;
 
-use dstuecken\Notify\Handler\HeaderHandler;
+use dstuecken\Notify\Handler\NullHandler;
 use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
 use dstuecken\Notify\Type\DetailedNotification;
@@ -128,7 +128,7 @@ class NotificationCenter
     {
         if (!$this->handlers)
         {
-            $this->addHandler(new HeaderHandler());
+            $this->addHandler(new NullHandler());
         }
 
         foreach ($this->getHandlers() as $handler)
