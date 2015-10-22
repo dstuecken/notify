@@ -68,7 +68,11 @@ class HeaderHandler
                     )
                 )
             );
+
+            return true;
         }
+
+        return true;
     }
 
     /**

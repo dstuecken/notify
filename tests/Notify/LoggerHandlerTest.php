@@ -1,11 +1,13 @@
 <?php
 namespace NotifyTest;
 
+use dstuecken\Notify\Handler\LoggerHandler;
 use dstuecken\Notify\NotificationCenter;
-use dstuecken\Notify\Handler\HeaderHandler;
 use dstuecken\Notify\Type\DetailedNotification;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 
-Class NotifyHeaderTest
+Class LoggerHandlerTest
     extends \PHPUnit_Framework_TestCase
 {
 
@@ -17,7 +19,13 @@ Class NotifyHeaderTest
     {
         $notificationCenter = new NotificationCenter();
         $notificationCenter->addHandler(
-            new HeaderHandler('Notify', NotificationCenter::ERROR)
+            new LoggerHandler(
+                new Logger(
+                    'testLogger', array(
+                        new StreamHandler('/dev/null')
+                    )
+                ), NotificationCenter::ERROR
+            )
         );
 
         $not[] = $notificationCenter->error('There was an error.');
