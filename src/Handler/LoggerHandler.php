@@ -15,19 +15,14 @@ use Psr\Log\LoggerInterface;
  * @package dstuecken\Notify\Handler
  */
 class LoggerHandler
-    implements
-    HandlerInterface
+    extends AbstractHandler
+    implements HandlerInterface
 {
 
     /**
      * @var LoggerInterface
      */
     private $logger;
-
-    /**
-     * @var int
-     */
-    private $level;
 
     /**
      * Handle a notification
@@ -37,17 +32,6 @@ class LoggerHandler
     public function handle(NotificationInterface $notification, $level)
     {
         return $this->logger->log($level, $notification->message());
-    }
-
-    /**
-     * @param NotificationInterface $notification The notification itself
-     * @param int                   $level        Level of the current notification
-     *
-     * @return bool
-     */
-    public function shouldHandle(NotificationInterface $notification, $level)
-    {
-        return $this->level >= $level;
     }
 
     /**

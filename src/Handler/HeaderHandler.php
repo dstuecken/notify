@@ -15,9 +15,8 @@ use dstuecken\Notify\NotificationCenter;
  * @package dstuecken\Notify\Handler
  */
 class HeaderHandler
-    implements
-    HandlerInterface,
-    AttributeFormatterInterface
+    extends AbstractHandler
+    implements HandlerInterface, AttributeFormatterInterface
 {
 
     /**
@@ -29,11 +28,6 @@ class HeaderHandler
      * @var string
      */
     private $identifier = 'Notify';
-
-    /**
-     * @var int
-     */
-    private $level;
 
     /**
      * Handle a notification
@@ -124,17 +118,6 @@ class HeaderHandler
 
         return $options;
     } // function
-
-    /**
-     * @param NotificationInterface $notification The notification itself
-     * @param int                   $level        Level of the current notification
-     *
-     * @return bool
-     */
-    public function shouldHandle(NotificationInterface $notification, $level)
-    {
-        return $this->level >= $level;
-    }
 
     /**
      * @param string $identifier
