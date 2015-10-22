@@ -2,6 +2,8 @@
 
 Framework agnostic and lightweight notification system implementing the PSR LoggerInterface with several handling adapters.
 
+Feel free to implement your own handlers!
+
 ## Requirements
 
 * PHP 5.3
@@ -85,10 +87,13 @@ $notificationCenter->error('There was an error.');
 
 Sends an HTTP Header, which can be observed by Javascript to represent errors as growl-like notification messages.
 
-
 ### Logger
 
 Forwards your notifications to a Logger.
+
+### MacOS
+
+Displays a Mac OS X Notification Center Message.
 
 ## Tests
 
