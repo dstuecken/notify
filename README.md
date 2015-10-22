@@ -56,22 +56,6 @@ $notificationCenter->addHandler(
 $notificationCenter->error('There was an error.');
 ```
 
-### Use the Logger Handler
-
-You can send your notifications to any LoggerInterface capable logger:
-
-```php
-<?php
-$logger = new Logger('my-logger');
-
-$notificationCenter = new NotificationCenter();
-$notificationCenter->addHandler(
-    new LoggerHandler($logger, NotificationCenter::ERROR)
-);
-
-$notificationCenter->error('There was an error.');
-```
-
 ### Push your notifications to several Handlers
 
 You can send your notifications to any LoggerInterface capable logger:
