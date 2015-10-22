@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
  *
  * Sends all notifications to a logger
  *
- * @author  Dennis Stücken <dstuecken@synetics.de>
+ * @author  Dennis Stücken <dstuecken@i-doit.com>
  * @package dstuecken\Notify\Handler
  */
 class LoggerHandler

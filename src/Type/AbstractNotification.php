@@ -7,7 +7,7 @@ use dstuecken\Notify\Interfaces\TitleAwareInterface;
 /**
  * Base notification class.
  *
- * @author Dennis Stücken <dstuecken@synetics.de>
+ * @author Dennis Stücken <dstuecken@i-doit.com>
  */
 abstract class AbstractNotification implements
     NotificationInterface,

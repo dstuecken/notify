@@ -6,7 +6,7 @@ use dstuecken\Notify\Interfaces\NotificationInterface;
 /**
  * This interfaces is responsible for doing stuff with the notifications
  *
- * @author Dennis Stücken <dstuecken@synetics.de>
+ * @author Dennis Stücken <dstuecken@i-doit.com>
  * @package dstuecken\Notify\Interfaces
  */
 interface HandlerInterface

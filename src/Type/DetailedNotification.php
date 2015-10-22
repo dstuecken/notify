@@ -4,7 +4,7 @@ namespace dstuecken\Notify\Type;
 /**
  * Class DetailedNotification
  *
- * @author Dennis Stücken <dstuecken@synetics.de>
+ * @author Dennis Stücken <dstuecken@i-doit.com>
  * @package dstuecken\Notify\NotificationType
  */
 class DetailedNotification extends AbstractNotification

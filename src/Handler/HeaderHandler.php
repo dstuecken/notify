@@ -11,7 +11,7 @@ use dstuecken\Notify\NotificationCenter;
  *
  * Sends various HTTP Header Notifications to be interpreted by a javascript implementation.
  *
- * @author  Dennis Stücken <dstuecken@synetics.de>
+ * @author  Dennis Stücken <dstuecken@i-doit.com>
  * @package dstuecken\Notify\Handler
  */
 class HeaderHandler
