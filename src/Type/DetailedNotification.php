@@ -1,6 +1,8 @@
 <?php
 namespace dstuecken\Notify\Type;
 
+use dstuecken\Notify\Interfaces\AttributeAwareInterface;
+
 /**
  * Class DetailedNotification
  *
@@ -9,6 +11,7 @@ namespace dstuecken\Notify\Type;
  */
 class DetailedNotification
     extends AbstractNotification
+    implements AttributeAwareInterface
 {
     /**
      * Additional notification attributes
@@ -18,17 +21,17 @@ class DetailedNotification
     protected $attributes = array();
 
     /**
-     * Returns a parameter.
+     * Returns an attribute.
      *
-     * @param string $id
+     * @param string $name Key-name of the attribute
      *
      * @return mixed
      */
-    public function parameter($id)
+    public function attribute($name)
     {
-        if (isset($this->attributes[$id]))
+        if (isset($this->attributes[$name]))
         {
-            return $this->attributes[$id];
+            return $this->attributes[$name];
         }
 
         return '';
