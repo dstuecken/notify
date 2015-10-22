@@ -1,8 +1,6 @@
 <?php
 namespace dstuecken\Notify\Type;
 
-use dstuecken\Notify\AbstractNotification;
-
 /**
  * Class DetailedNotification
  *

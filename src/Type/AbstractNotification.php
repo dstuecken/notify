@@ -1,5 +1,5 @@
 <?php
-namespace dstuecken\Notify;
+namespace dstuecken\Notify\Type;
 
 use dstuecken\Notify\Interfaces\NotificationInterface;
 use dstuecken\Notify\Interfaces\TitleAwareInterface;

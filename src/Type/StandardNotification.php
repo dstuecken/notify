@@ -1,7 +1,5 @@
 <?php
-namespace dstuecken\Notify\NotificationType;
-
-use dstuecken\Notify\AbstractNotification;
+namespace dstuecken\Notify\Type;
 
 /**
  * StandardNotification

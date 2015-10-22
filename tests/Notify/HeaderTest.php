@@ -1,4 +1,5 @@
 <?php
+namespace NotifyTest;
 
 use dstuecken\Notify\NotificationCenter;
 use dstuecken\Notify\Handler\HeaderHandler;
@@ -7,6 +8,11 @@ use dstuecken\Notify\Handler\HeaderHandler;
 Class NotifyHeaderTest
     extends \PHPUnit_Framework_TestCase
 {
+
+    public function setUp()
+    {
+    }
+
     public function testNotify()
     {
 
@@ -15,9 +21,9 @@ Class NotifyHeaderTest
             new HeaderHandler('Notify', NotificationCenter::ERROR)
         );
 
-
-        $notificationCenter->error('There was an error.');
-
-        $this->assertEquals($isSent, true);
+        $this->assertEquals(
+            $notificationCenter->error('There was an error.'),
+            true
+        );
     }
 }
