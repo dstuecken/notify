@@ -1,0 +1,29 @@
+{
+    "name": "dstuecken/notify",
+    "description": "Framework agnostic and lightweight notification system with several adapters.",
+    "require-dev": {
+        "hipchat/hipchat-php": "1.2.*",
+        "psr/log": "~1.0",
+        "swiftmailer/swiftmailer": "~5.0.0"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "psr/log": "~1.0"
+    },
+    "suggest": {
+        "hipchat/hipchat-php": "Enable HipChat notification",
+        "swiftmailer/swiftmailer": "Enable E-Mail notification"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "dstuecken",
+            "email": "dstuecken@synetics.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "dstuecken\\Notify": "src/"
+        }
+    }
+}
