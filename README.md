@@ -4,6 +4,8 @@ Framework agnostic and lightweight notification system implementing the PSR Logg
 
 Feel free to implement your own handlers!
 
+[![Build Status](https://travis-ci.org/dstuecken/notify.svg)](https://travis-ci.org/dstuecken/notify)
+
 ## Requirements
 
 * PHP 5.3
