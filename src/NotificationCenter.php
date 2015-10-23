@@ -78,6 +78,18 @@ class NotificationCenter
     }
 
     /**
+     * Factory method for a better method chaining experience
+     *
+     * @param array $handlers
+     *
+     * @return NotificationCenter
+     */
+    public static function factory(array $handlers = array())
+    {
+        return new self($handlers);
+    }
+
+    /**
      * Push handler to stack.
      *
      * @param HandlerInterface $handler
