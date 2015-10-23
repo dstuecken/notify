@@ -60,9 +60,25 @@ $notificationCenter->addHandler(
 $notificationCenter->error('There was an error.');
 ```
 
+### Use the HipChat Handler
+
+You can also send all your CRITICAL notifications to hipchat, for example:
+
+```php
+<?php
+$hipchat = new HipChat\HipChat('apiKey123', );
+
+$notificationCenter = new NotificationCenter();
+$notificationCenter->addHandler(
+    new HipChatHandler($hipchat, 'hipchat-room-id', NotificationCenter::CRITICAL, 'hipChatBotName')
+);
+
+$notificationCenter->error('There was an error.');
+```
+
 ### Push your notifications to several Handlers
 
-You can send your notifications to any LoggerInterface capable logger:
+You can send your notifications to different handlers in different levels:
 
 ```php
 <?php
@@ -73,11 +89,11 @@ $notificationCenter
 	->addHandler(
 	    new HeaderHandler(
 	        'Notify',
-	        NotificationCenter::ERROR
+	        NotificationCenter::INFO
 	    )
 	)
 	->addHandler(
-	    new NullHandler()
+	    new LoggerHandler(new Logger(), NotificationCenter::ERROR)
 	);
 
 $notificationCenter->error('There was an error.');
