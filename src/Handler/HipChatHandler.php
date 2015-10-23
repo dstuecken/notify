@@ -68,7 +68,7 @@ class HipChatHandler
             $notify = true;
         }
 
-        $this->hipchat->message_room(
+        return $this->hipchat->message_room(
             $this->room,
             $this->from,
             $notification->message(),
