@@ -113,6 +113,11 @@ Forwards your notifications to a Logger.
 
 Displays a Mac OS X Notification Center Message.
 
+
+### HipChat
+
+
+
 ## Tests
 
 Run phpunit tests with
