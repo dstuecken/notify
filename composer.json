@@ -8,7 +8,7 @@
         "hipchat/hipchat-php": "1.2.*",
         "psr/log": "~1.0",
         "swiftmailer/swiftmailer": "~5.0.0",
-        "phpunit/phpunit": "5.0.*",
+        "phpunit/phpunit": "4.0.*",
         "monolog/monolog": "1.*"
     },
     "require": {
