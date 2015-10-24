@@ -107,16 +107,19 @@ Sends an HTTP Header, which can be observed by Javascript to represent errors as
 
 ### Logger
 
-Forwards your notifications to a Logger.
+Forwards your notifications to a Logger, which implements the LoggerInterface.
 
 ### MacOS
 
 Displays a Mac OS X Notification Center Message.
 
-
 ### HipChat
 
+Drops notifications on your hipchat rooms.
 
+### NotifySend
+
+Notify via Ubuntu's notification service.
 
 ## Tests
 
