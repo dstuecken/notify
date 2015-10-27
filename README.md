@@ -122,6 +122,10 @@ Drops notifications on your hipchat rooms.
 
 Notify via Ubuntu's notification service.
 
+### Syslog
+
+Send your notifications to a syslog (using the PHP syslog() function).
+
 ## Tests
 
 Run phpunit tests with
