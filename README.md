@@ -20,7 +20,7 @@ To install Notify with Composer, just add the following to your composer.json fi
 ```json
 {
     "require": {
-        "dstuecken/notify": "0.*"
+        "dstuecken/notify": "dev-master"
     }
 }
 ```
