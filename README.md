@@ -5,7 +5,9 @@ Framework agnostic and lightweight notification system implementing the PSR Logg
 Feel free to implement your own handlers!
 
 [![Build Status](https://travis-ci.org/dstuecken/notify.svg)](https://travis-ci.org/dstuecken/notify)
-[![Latest Stable Version](https://img.shields.io/packagist/v/dstuecken/notify.svg?style=flat-square)](https://packagist.org/packages/dstuecken/notify)
+[![License](https://poser.pugx.org/dstuecken/notify/license)](https://packagist.org/packages/dstuecken/notify)
+[![Latest Stable Version](https://poser.pugx.org/dstuecken/notify/v/stable)](https://packagist.org/packages/dstuecken/notify)
+[![Latest Unstable Version](https://poser.pugx.org/dstuecken/notify/v/unstable)](https://packagist.org/packages/dstuecken/notify)
 
 ## Requirements
 
