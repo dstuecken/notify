@@ -134,7 +134,7 @@ Attach your notifications to a smarty template variable
 
 ### Memory
 
-Forward notifications to an arry
+Forward notifications to an array
 
 ## Tests
 
