@@ -6,7 +6,6 @@ use dstuecken\Notify\NotificationCenter;
 
 /**
  * Class SmartyHandler
- *
  * Sends notifications directly to the template system.
  *
  * @author  Dennis Stücken <dstuecken@i-doit.com>
@@ -24,14 +23,13 @@ class SmartyHandler extends HeaderHandler
 	 */
 	private $var;
 
+
 	/**
 	 * Handle a notification.
 	 *
-	 * @param   NotificationInterface  $notification
-	 * @param   integer                $level
 	 * @return  boolean
 	 */
-	public function handle(NotificationInterface $notification, $level)
+	public function handle (NotificationInterface $notification, $level)
 	{
 		if (is_a($notification, 'dstuecken\Notify\AttributeAwareInterface'))
 		{
@@ -47,7 +45,22 @@ class SmartyHandler extends HeaderHandler
 			$options['header'] = $notification->title();
 		}
 
-		$this->smarty->append($this->var, $notification);
+		$variable = [
+			'message' => $notification->message(),
+			'type' => isset($this->levelMapping[$level]) ? $this->levelMapping[$level] : self::STANDARD,
+			'options' => $options
+		];
+
+		$current = $this->smarty->getTemplateVars($this->var);
+
+		if (!$current)
+		{
+			$this->smarty->assign($this->var, [$variable]);
+		}
+		else
+		{
+			$this->smarty->append($this->var, $variable);
+		}
 
 		return true;
 	}
@@ -58,12 +71,12 @@ class SmartyHandler extends HeaderHandler
 	 *
 	 * @param  \Smarty  $template
 	 * @param  string   $templateVariable
-	 * @param  int      $level
+	 * @param  integer  $level
 	 * @param  string   $identifier
 	 */
 	public function __construct (\Smarty $template, $templateVariable = 'notification', $level = NotificationCenter::INFO, $identifier = 'Smarty')
 	{
-        parent::__construct($identifier, $level);
+		parent::__construct($identifier, $level);
 
 		$this->smarty = $template;
 		$this->var = $templateVariable;
