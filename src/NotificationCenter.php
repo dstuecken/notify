@@ -129,6 +129,24 @@ class NotificationCenter
     }
 
     /**
+     * @param $byClassName
+     *
+     * @return HandlerInterface
+     */
+    public function getRegisteredHandler($byClassName)
+    {
+        foreach ($this->handlers as $handler)
+        {
+            if (is_a($handler, $byClassName))
+            {
+                return $handler;
+            }
+        }
+
+        throw new \InvalidArgumentException('There is no handler named "' . $byClassName . '" registered.');
+    }
+
+    /**
      * Handles notification for every handler
      *
      * @param NotificationInterface $notification the notification instanceitself
