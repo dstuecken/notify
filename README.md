@@ -99,7 +99,7 @@ $notificationCenter
 	    new LoggerHandler(new Logger(), NotificationCenter::ERROR)
 	);
 
-$notificationCenter->error('There was an error.');
+$notificationCenter->error('There was an error.', HeaderHandler::formatAttributes(null, null, true));
 ```
 
 ## Currently implemented Handlers
@@ -127,6 +127,14 @@ Notify via Ubuntu's notification service.
 ### Syslog
 
 Send your notifications to a syslog (using the PHP syslog() function).
+
+### Smarty
+
+Attach your notifications to a smarty template variable
+
+### Memory
+
+Forward notifications to an arry
 
 ## Tests
 

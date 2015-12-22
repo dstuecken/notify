@@ -27,6 +27,8 @@ class SmartyHandler extends HeaderHandler
 	/**
 	 * Handle a notification.
 	 *
+	 * @param   NotificationInterface  $notification
+	 * @param   integer                $level
 	 * @return  boolean
 	 */
 	public function handle(NotificationInterface $notification, $level)
@@ -55,14 +57,15 @@ class SmartyHandler extends HeaderHandler
 	 * SmartyHandler constructor.
 	 *
 	 * @param  \Smarty  $template
-	 * @param  string                    $var
-	 * @param  integer                   $level
+	 * @param  string   $templateVariable
+	 * @param  int      $level
+	 * @param  string   $identifier
 	 */
 	public function __construct (\Smarty $template, $templateVariable = 'notification', $level = NotificationCenter::INFO, $identifier = 'Smarty')
 	{
         parent::__construct($identifier, $level);
 
-		$this->tpl = $template;
+		$this->smarty = $template;
 		$this->var = $templateVariable;
-	} // function
-} // class
+	}
+}
