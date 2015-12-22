@@ -47,19 +47,19 @@ class HeaderHandler
     /**
      * @var int
      */
-    private static $messageindex = 0;
+    protected static $messageindex = 0;
 
     /**
      * @var string
      */
-    private $identifier = 'Notify';
+    protected $identifier = 'Notify';
 
     /**
      * The notification types.
      *
      * @return  array
      */
-    private static $types = array(
+    protected static $types = array(
         'standard' => self::STANDARD,
         'success'  => self::SUCCESS,
         'error'    => self::ERROR,
@@ -72,7 +72,7 @@ class HeaderHandler
      *
      * @var array
      */
-    private $levelMapping = array(
+    protected $levelMapping = array(
         NotificationCenter::DEBUG     => self::STANDARD,
         NotificationCenter::INFO      => self::SUCCESS,
         NotificationCenter::NOTICE    => self::INFO,
