@@ -1,7 +1,6 @@
 <?php
-namespace idoit\Notify\Handler;
+namespace dstuecken\Notify\Handler;
 
-use dstuecken\Notify\Handler\HeaderHandler;
 use dstuecken\Notify\Interfaces\NotificationInterface;
 use dstuecken\Notify\NotificationCenter;
 
