@@ -27,7 +27,7 @@ abstract class AbstractHandler
      */
     public function shouldHandle(NotificationInterface $notification, $level)
     {
-        return $this->level >= $level;
+        return $level >= $this->level;
     }
 
 }
