@@ -47,6 +47,9 @@ $notificationCenter->addHandler(
 $notificationCenter->error('There was an error.');
 ```
 
+The Header handler is used to send an HTTP Header to the Browser in the following (changable) format: X-Notify-Notification.
+This header can then be grabed by a javascript implementation to display a nice and clean javascript error message while continuing the application with a normal response.
+
 ### Use the Logger Handler
 
 You can send your notifications to any LoggerInterface capable logger:
