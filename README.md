@@ -11,7 +11,7 @@ Feel free to implement your own handlers!
 
 ## Requirements
 
-* PHP 5.3
+* PHP 5.4
 
 ## Installation
 
