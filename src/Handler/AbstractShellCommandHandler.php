@@ -1,7 +1,6 @@
 <?php
 namespace dstuecken\Notify\Handler;
 
-use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
 use dstuecken\Notify\NotificationCenter;
 
@@ -24,7 +23,7 @@ abstract class AbstractShellCommandHandler
     /**
      * @var bool
      */
-    protected $shellCommandAvailable = NULL;
+    protected $shellCommandAvailable = null;
 
     /**
      * @param NotificationInterface $notification The notification itself
@@ -44,7 +43,7 @@ abstract class AbstractShellCommandHandler
      */
     public function available()
     {
-        if ($this->shellCommandAvailable === NULL)
+        if ($this->shellCommandAvailable === null)
         {
             exec("which {$this->shellCommand} > /dev/null", $output, $code);
             $this->shellCommandAvailable = ($code === 0);

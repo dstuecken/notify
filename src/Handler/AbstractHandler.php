@@ -1,7 +1,6 @@
 <?php
 namespace dstuecken\Notify\Handler;
 
-use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
 
 /**

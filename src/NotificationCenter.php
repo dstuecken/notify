@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
  * Class NotificationCenter
  *
  * @package dstuecken\Notify
- * @author Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@i-doit.com>
  */
 class NotificationCenter
     implements LoggerInterface
@@ -67,12 +67,12 @@ class NotificationCenter
     /**
      * @var NotificationInterface[]
      */
-    protected $notifications = array();
+    protected $notifications = [];
 
     /**
      * @param HandlerInterface[] $handlers Optional stack of handlers, the first one in the array is called first, etc.
      */
-    public function __construct(array $handlers = array())
+    public function __construct(array $handlers = [])
     {
         $this->handlers = $handlers;
     }
@@ -84,7 +84,7 @@ class NotificationCenter
      *
      * @return NotificationCenter
      */
-    public static function factory(array $handlers = array())
+    public static function factory(array $handlers = [])
     {
         return new self($handlers);
     }
@@ -184,7 +184,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function log($level, $message, array $context = array())
+    public function log($level, $message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -200,7 +200,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function debug($message, array $context = array())
+    public function debug($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -216,7 +216,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function info($message, array $context = array())
+    public function info($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -232,7 +232,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function notice($message, array $context = array())
+    public function notice($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -248,7 +248,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function warning($message, array $context = array())
+    public function warning($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -264,7 +264,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function error($message, array $context = array())
+    public function error($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -280,7 +280,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function critical($message, array $context = array())
+    public function critical($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -296,7 +296,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function alert($message, array $context = array())
+    public function alert($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),
@@ -312,7 +312,7 @@ class NotificationCenter
      *
      * @return bool record processed or not?
      */
-    public function emergency($message, array $context = array())
+    public function emergency($message, array $context = [])
     {
         return $this->notify(
             new DetailedNotification($message, '', $context),

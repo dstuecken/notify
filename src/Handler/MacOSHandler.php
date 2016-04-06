@@ -3,6 +3,7 @@ namespace dstuecken\Notify\Handler;
 
 use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
+use dstuecken\Notify\Interfaces\TitleAwareInterface;
 
 /**
  * MacOSHandler
@@ -28,7 +29,7 @@ class MacOSHandler
      */
     public function handle(NotificationInterface $notification, $level)
     {
-        if (is_a($notification, 'dstuecken\Notify\TitleAwareInterface'))
+        if ($notification instanceof TitleAwareInterface)
         {
             $command = $this->shellCommand . ' -e \'display notification "' . addslashes($notification->message()) . '" with title "' . addslashes($notification->title()) . '"\'';
         }

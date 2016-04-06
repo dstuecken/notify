@@ -1,8 +1,10 @@
 <?php
 namespace dstuecken\Notify\Handler;
 
+use dstuecken\Notify\Interfaces\AttributeAwareInterface;
 use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
+use dstuecken\Notify\Interfaces\TitleAwareInterface;
 use dstuecken\Notify\NotificationCenter;
 
 /**
@@ -27,7 +29,7 @@ class NotifySendHandler
      *
      * @var array
      */
-    private $levelMapping = array(
+    private $levelMapping = [
         NotificationCenter::DEBUG     => 'low',
         NotificationCenter::INFO      => 'low',
         NotificationCenter::NOTICE    => 'low',
@@ -36,7 +38,7 @@ class NotifySendHandler
         NotificationCenter::CRITICAL  => 'critical',
         NotificationCenter::ALERT     => 'critical',
         NotificationCenter::EMERGENCY => 'critical'
-    );
+    ];
 
     /**
      * Handle a notification
@@ -45,7 +47,7 @@ class NotifySendHandler
      */
     public function handle(NotificationInterface $notification, $level)
     {
-        if (is_a($notification, 'dstuecken\Notify\TitleAwareInterface'))
+        if ($notification instanceof TitleAwareInterface)
         {
             $command = $this->shellCommand . ' ' . escapeshellarg($notification->message()) . ' ' . escapeshellarg($notification->title());
         }
@@ -54,7 +56,7 @@ class NotifySendHandler
             $command = $this->shellCommand . ' ' . escapeshellarg($notification->message());
         }
 
-        if (is_a($notification, 'dstuecken\Notify\AttributeAwareInterface'))
+        if ($notification instanceof AttributeAwareInterface)
         {
             $expiry = (int) $notification->attribute('expiry');
 

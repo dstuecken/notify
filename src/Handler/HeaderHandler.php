@@ -1,9 +1,11 @@
 <?php
 namespace dstuecken\Notify\Handler;
 
+use dstuecken\Notify\Interfaces\AttributeAwareInterface;
 use dstuecken\Notify\Interfaces\AttributeFormatterInterface;
 use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
+use dstuecken\Notify\Interfaces\TitleAwareInterface;
 use dstuecken\Notify\NotificationCenter;
 
 /**
@@ -59,20 +61,20 @@ class HeaderHandler
      *
      * @return  array
      */
-    protected static $types = array(
+    protected static $types = [
         'standard' => self::STANDARD,
         'success'  => self::SUCCESS,
         'error'    => self::ERROR,
         'info'     => self::INFO,
         'warning'  => self::WARNING
-    );
+    ];
 
     /**
      * Maps Notification Alerts to the Header Notification types
      *
      * @var array
      */
-    protected $levelMapping = array(
+    protected $levelMapping = [
         NotificationCenter::DEBUG     => self::STANDARD,
         NotificationCenter::INFO      => self::SUCCESS,
         NotificationCenter::NOTICE    => self::INFO,
@@ -81,7 +83,7 @@ class HeaderHandler
         NotificationCenter::CRITICAL  => self::ERROR,
         NotificationCenter::ALERT     => self::ERROR,
         NotificationCenter::EMERGENCY => self::ERROR
-    );
+    ];
 
     /**
      * @inheritdoc
@@ -100,16 +102,16 @@ class HeaderHandler
     {
         if (!headers_sent())
         {
-            if (is_a($notification, 'dstuecken\Notify\AttributeAwareInterface'))
+            if ($notification instanceof AttributeAwareInterface)
             {
                 $options = $notification->attributes();
             }
             else
             {
-                $options = array();
+                $options = [];
             }
 
-            if (is_a($notification, 'dstuecken\Notify\TitleAwareInterface'))
+            if ($notification instanceof TitleAwareInterface)
             {
                 $options['header'] = $notification->title();
             }
@@ -117,11 +119,11 @@ class HeaderHandler
             header(
                 'X-' . $this->identifier . '-Notification-' . self::$messageindex++ . ':' .
                 json_encode(
-                    array(
+                    [
                         'message' => $notification->message(),
                         'type'    => isset($this->levelMapping[$level]) ? $this->levelMapping[$level] : self::STANDARD,
                         'options' => $options
-                    )
+                    ]
                 )
             );
 
@@ -144,36 +146,36 @@ class HeaderHandler
      * @return  array
      *
      */
-    public static function formatAttributes($destroy_callback = NULL, $create_callback = NULL, $sticky = NULL, $life = NULL, $classname = NULL, $width = NULL)
+    public static function formatAttributes($destroy_callback = null, $create_callback = null, $sticky = null, $life = null, $classname = null, $width = null)
     {
-        $options = array();
+        $options = [];
 
-        if ($destroy_callback !== NULL)
+        if ($destroy_callback !== null)
         {
             $options['destroyed'] = $destroy_callback;
         } // if
 
-        if ($create_callback !== NULL)
+        if ($create_callback !== null)
         {
             $options['created'] = $create_callback;
         } // if
 
-        if ($sticky !== NULL)
+        if ($sticky !== null)
         {
             $options['sticky'] = !!$sticky;
         } // if
 
-        if ($life !== NULL)
+        if ($life !== null)
         {
             $options['life'] = $life;
         } // if
 
-        if ($classname !== NULL)
+        if ($classname !== null)
         {
             $options['className'] = $classname;
         } // if
 
-        if ($width !== NULL)
+        if ($width !== null)
         {
             $options['width'] = $width;
         } // if

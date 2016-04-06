@@ -17,7 +17,7 @@ class MemoryHandler
     extends AbstractHandler
     implements HandlerInterface
 {
-    protected $memory = array();
+    protected $memory = [];
 
     /**
      * @return array
@@ -44,7 +44,7 @@ class MemoryHandler
      */
     public function __construct($level = NotificationCenter::DEBUG)
     {
-        $this->level      = $level;
+        $this->level = $level;
     }
 
 }

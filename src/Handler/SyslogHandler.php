@@ -22,7 +22,7 @@ class SyslogHandler
      *
      * @var array
      */
-    private $levelMapping = array(
+    private $levelMapping = [
         NotificationCenter::DEBUG     => LOG_DEBUG,
         NotificationCenter::INFO      => LOG_INFO,
         NotificationCenter::NOTICE    => LOG_NOTICE,
@@ -31,7 +31,7 @@ class SyslogHandler
         NotificationCenter::CRITICAL  => LOG_CRIT,
         NotificationCenter::ALERT     => LOG_ALERT,
         NotificationCenter::EMERGENCY => LOG_EMERG
-    );
+    ];
 
     /**
      * Handle a notification
@@ -50,7 +50,7 @@ class SyslogHandler
      */
     public function __construct($level = NotificationCenter::CRITICAL)
     {
-        $this->level      = $level;
+        $this->level = $level;
     }
 
 }

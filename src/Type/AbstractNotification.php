@@ -9,7 +9,8 @@ use dstuecken\Notify\Interfaces\TitleAwareInterface;
  *
  * @author Dennis Stücken <dstuecken@i-doit.com>
  */
-abstract class AbstractNotification implements
+abstract class AbstractNotification
+    implements
     NotificationInterface,
     TitleAwareInterface
 {
@@ -61,12 +62,12 @@ abstract class AbstractNotification implements
     }
 
     /**
-     * @param string $message    The notification message
-     * @param string $title      The notification title
+     * @param string $message The notification message
+     * @param string $title   The notification title
      */
     public function __construct($message, $title = '')
     {
-        $this->message    = $message;
-        $this->title      = $title;
+        $this->message = $message;
+        $this->title   = $title;
     }
 }

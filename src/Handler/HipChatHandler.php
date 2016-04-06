@@ -1,6 +1,7 @@
 <?php
 namespace dstuecken\Notify\Handler;
 
+use dstuecken\Notify\Interfaces\AttributeAwareInterface;
 use dstuecken\Notify\Interfaces\HandlerInterface;
 use dstuecken\Notify\Interfaces\NotificationInterface;
 use dstuecken\Notify\NotificationCenter;
@@ -22,7 +23,7 @@ class HipChatHandler
     /**
      * @var HipChat
      */
-    protected $hipchat = NULL;
+    protected $hipchat = null;
 
     /**
      * @var string
@@ -39,7 +40,7 @@ class HipChatHandler
      *
      * @var array
      */
-    private $levelMapping = array(
+    private $levelMapping = [
         NotificationCenter::DEBUG     => HipChat::COLOR_GRAY,
         NotificationCenter::INFO      => HipChat::COLOR_GRAY,
         NotificationCenter::NOTICE    => HipChat::COLOR_GRAY,
@@ -48,7 +49,7 @@ class HipChatHandler
         NotificationCenter::CRITICAL  => HipChat::COLOR_RED,
         NotificationCenter::ALERT     => HipChat::COLOR_RED,
         NotificationCenter::EMERGENCY => HipChat::COLOR_PURPLE
-    );
+    ];
 
     /**
      * Handle a notification
@@ -57,10 +58,10 @@ class HipChatHandler
      */
     public function handle(NotificationInterface $notification, $level)
     {
-        if (is_a($notification, 'dstuecken\Notify\AttributeAwareInterface'))
+        if ($notification instanceof AttributeAwareInterface)
         {
-            $notify = $notification->parameter('notify');
-            $format = $notification->parameter('format') ?: HipChat::FORMAT_HTML;
+            $notify = $notification->attribute('notify');
+            $format = $notification->attribute('format') ?: HipChat::FORMAT_HTML;
         }
         else
         {

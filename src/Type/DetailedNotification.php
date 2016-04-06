@@ -18,7 +18,7 @@ class DetailedNotification
      *
      * @var array
      */
-    protected $attributes = array();
+    protected $attributes = [];
 
     /**
      * Returns an attribute.
@@ -50,7 +50,7 @@ class DetailedNotification
      * @param string $title      The notification title
      * @param array  $attributes Optional attributes
      */
-    public function __construct($message, $title = '', $attributes = array())
+    public function __construct($message, $title = '', $attributes = [])
     {
         parent::__construct($message, $title);
         $this->attributes = $attributes;
