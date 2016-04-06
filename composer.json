@@ -1,6 +1,6 @@
 {
     "name":         "dstuecken/notify",
-    "version":      "1.0.1",
+    "version":      "1.0.3",
     "type":         "library",
     "description":  "Framework agnostic and lightweight notification system with several adapters.",
     "keywords":     ["notify", "notification", "flash", "logger", "abstraction"],
