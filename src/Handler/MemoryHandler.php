@@ -10,7 +10,7 @@ use dstuecken\Notify\NotificationCenter;
  *
  * Save all notifications in memory.
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 class MemoryHandler

@@ -10,7 +10,7 @@ use dstuecken\Notify\NotificationCenter;
  *
  * Triggers a syslog message via syslog() function (http://php.net/manual/en/function.syslog.php).
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 class SyslogHandler

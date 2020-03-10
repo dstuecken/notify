@@ -10,7 +10,7 @@ use dstuecken\Notify\NotificationCenter;
  * Class SmartyHandler
  * Sends notifications directly to the template system.
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package idoit\Notify\Handler
  */
 class SmartyHandler

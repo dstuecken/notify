@@ -4,7 +4,7 @@ namespace dstuecken\Notify\Interfaces;
 /**
  * This interfaces describes a notification with attributes
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Interfaces
  */
 interface AttributeAwareInterface

@@ -11,7 +11,7 @@ use Psr\Log\LoggerInterface;
  * Class NotificationCenter
  *
  * @package dstuecken\Notify
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  */
 class NotificationCenter
     implements LoggerInterface

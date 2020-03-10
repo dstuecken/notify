@@ -12,7 +12,7 @@ use HipChat\HipChat;
  *
  * Triggers a HipChat notification
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 class HipChatHandler

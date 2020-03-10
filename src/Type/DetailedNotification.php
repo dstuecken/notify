@@ -6,7 +6,7 @@ use dstuecken\Notify\Interfaces\AttributeAwareInterface;
 /**
  * Class DetailedNotification
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\NotificationType
  */
 class DetailedNotification

@@ -9,7 +9,7 @@ use dstuecken\Notify\NotificationCenter;
  *
  * Provides basic functionality for calling a shell command
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 abstract class AbstractShellCommandHandler

@@ -10,7 +10,7 @@ use dstuecken\Notify\Interfaces\TitleAwareInterface;
  *
  * Triggers a mac os x notification based on the Mac OS X Notification Center
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 class MacOSHandler

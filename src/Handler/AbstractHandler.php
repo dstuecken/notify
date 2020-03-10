@@ -8,7 +8,7 @@ use dstuecken\Notify\Interfaces\NotificationInterface;
  *
  * Provides basic functionality
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 abstract class AbstractHandler

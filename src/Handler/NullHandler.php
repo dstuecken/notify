@@ -9,7 +9,7 @@ use dstuecken\Notify\Interfaces\NotificationInterface;
  *
  * Does nothing
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 class NullHandler

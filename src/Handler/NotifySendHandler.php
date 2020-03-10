@@ -12,7 +12,7 @@ use dstuecken\Notify\NotificationCenter;
  *
  * Triggers an Ubuntu notification based on the notify-send shell command
  *
- * @author  Dennis Stücken <dstuecken@i-doit.com>
+ * @author  Dennis Stücken <dstuecken@me.com>
  * @package dstuecken\Notify\Handler
  */
 class NotifySendHandler
