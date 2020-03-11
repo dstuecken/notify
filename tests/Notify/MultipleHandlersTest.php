@@ -4,11 +4,12 @@ namespace NotifyTest;
 use dstuecken\Notify\Handler\HeaderHandler;
 use dstuecken\Notify\Handler\NullHandler;
 use dstuecken\Notify\NotificationCenter;
+use PHPUnit\Framework\TestCase;
 
 Class MultipleHandlersTest
-    extends \PHPUnit_Framework_TestCase
+    extends TestCase
 {
-    public function setUp()
+    protected function setUp()
     {
     }
 

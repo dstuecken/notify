@@ -4,9 +4,10 @@ namespace NotifyTest;
 use dstuecken\Notify\Handler\HipChatHandler;
 use dstuecken\Notify\NotificationCenter;
 use dstuecken\Notify\Type\DetailedNotification;
+use PHPUnit\Framework\TestCase;
 
 Class HipChatHandlerTest
-    extends \PHPUnit_Framework_TestCase
+    extends TestCase
 {
 
     /**
@@ -14,9 +15,9 @@ Class HipChatHandlerTest
      */
     protected $hipchat;
 
-    public function setUp()
+    protected function setUp()
     {
-        $this->hipchat = $this->getMock('HipChat\HipChat', array(), array('1234567890'));
+        $this->hipchat = $this->createMock('HipChat\HipChat', array(), array('1234567890'));
     }
 
     public function testNotify()
