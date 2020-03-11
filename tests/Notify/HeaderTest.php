@@ -4,12 +4,13 @@ namespace NotifyTest;
 use dstuecken\Notify\NotificationCenter;
 use dstuecken\Notify\Handler\HeaderHandler;
 use dstuecken\Notify\Type\DetailedNotification;
+use PHPUnit\Framework\TestCase;
 
 Class NotifyHeaderTest
-    extends \PHPUnit_Framework_TestCase
+    extends TestCase
 {
 
-    public function setUp()
+    protected function setUp()
     {
     }
 

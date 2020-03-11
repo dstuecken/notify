@@ -6,12 +6,13 @@ use dstuecken\Notify\NotificationCenter;
 use dstuecken\Notify\Type\DetailedNotification;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use PHPUnit\Framework\TestCase;
 
 Class LoggerHandlerTest
-    extends \PHPUnit_Framework_TestCase
+    extends TestCase
 {
 
-    public function setUp()
+    protected function setUp()
     {
     }
 

@@ -4,12 +4,13 @@ namespace NotifyTest;
 use dstuecken\Notify\Handler\MacOSHandler;
 use dstuecken\Notify\NotificationCenter;
 use dstuecken\Notify\Type\DetailedNotification;
+use PHPUnit\Framework\TestCase;
 
 Class MacOSHandlerTest
-    extends \PHPUnit_Framework_TestCase
+    extends TestCase
 {
 
-    public function setUp()
+    protected function setUp()
     {
     }
 
